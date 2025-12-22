@@ -1,0 +1,50 @@
+{
+  "endpoints": {
+    "/pet/findByStatus": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.findByStatus.findsPetsByStatus_({\n      status: \"available\",\n      accept: \"application/json\",\n  });\n\n  console.log(data);\n})();\n"
+    },
+    "/pet/findByTags": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.findByTags.findsPetsByTags_({\n      tags: \"nulla\",\n      accept: \"application/json\",\n  });\n\n  console.log(data);\n})();\n"
+    },
+    "/pet/{petId}/uploadImage": {
+      "post": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.uploadImage.uploadsAnImage_(\n  \"petId\",\n    new ArrayBuffer(0),\n  {\n      additionalMetadata: \"ea in enim\",\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    },
+    "/pet/{petId}": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.petId.findPetById_(\n  \"petId\",\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n",
+      "post": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.petId.updatesAPetInTheStoreWithFormData_(\n  \"petId\",\n  {\n      name: \"ea in enim\",\n      status: \"ea in enim\",\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n",
+      "delete": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.petId.deletesAPet_(\n  \"petId\",\n  {\n      apiKey: \"ea in enim\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    },
+    "/pet": {
+      "put": "import { SwaggerPetstore, UpdateAnExistingPetRequest, UpdateAnExistingPetRequestCategory, UpdateAnExistingPetRequestTags } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  \n  const updateAnExistingPetRequestCategory: UpdateAnExistingPetRequestCategory = {\t\n    id: 1,\n    name: \"Dogs\"\n  };\n  \n  \n  const updateAnExistingPetRequestTags: UpdateAnExistingPetRequestTags = {\t\n    id: 1247667,\n    name: \"sint ipsum est pariatur\"\n  };\n  \n  const updateAnExistingPetRequest: UpdateAnExistingPetRequest = {\t\n    name: \"doggie\",\n    photoUrls: [\"quis labore\"],\n    id: 10,\n    category: updateAnExistingPetRequestCategory,\n    tags: [updateAnExistingPetRequestTags],\n    status: \"pending\"\n  };\n\n  const { data } = await swaggerPetstore.pet.updateAnExistingPet_(\n  updateAnExistingPetRequest,\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n",
+      "post": "import { AddANewPetToTheStoreRequest, AddANewPetToTheStoreRequestCategory, AddANewPetToTheStoreRequestTags, SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  \n  const addANewPetToTheStoreRequestCategory: AddANewPetToTheStoreRequestCategory = {\t\n    id: 1,\n    name: \"Dogs\"\n  };\n  \n  \n  const addANewPetToTheStoreRequestTags: AddANewPetToTheStoreRequestTags = {\t\n    id: 1247667,\n    name: \"sint ipsum est pariatur\"\n  };\n  \n  const addANewPetToTheStoreRequest: AddANewPetToTheStoreRequest = {\t\n    name: \"doggie\",\n    photoUrls: [\"quis labore\"],\n    id: 10,\n    category: addANewPetToTheStoreRequestCategory,\n    tags: [addANewPetToTheStoreRequestTags],\n    status: \"pending\"\n  };\n\n  const { data } = await swaggerPetstore.pet.addANewPetToTheStore_(\n  addANewPetToTheStoreRequest,\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    },
+    "/store/inventory": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.inventory.returnsPetInventoriesByStatus_({\n      accept: \"application/json\",\n  });\n\n  console.log(data);\n})();\n"
+    },
+    "/store/order/{orderId}": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.orderId.findPurchaseOrderById_(\n  \"orderId\",\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n",
+      "delete": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.orderId.deletePurchaseOrderByIdentifier_(\"orderId\");\n\n  console.log(data);\n})();\n"
+    },
+    "/store/order": {
+      "post": "import { PlaceAnOrderForAPetRequest, SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  \n  const placeAnOrderForAPetRequest: PlaceAnOrderForAPetRequest = {\t\n    id: 10,\n    petId: 198772,\n    quantity: 7,\n    shipDate: \"1946-11-30T04:39:04.949Z\",\n    status: \"approved\",\n    complete: true\n  };\n\n  const { data } = await swaggerPetstore.order.placeAnOrderForAPet_(\n  placeAnOrderForAPetRequest,\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    },
+    "/user/createWithList": {
+      "post": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.createWithList.createsListOfUsersWithGivenInputArray_(\n    [],\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    },
+    "/user/login": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.login.logsUserIntoTheSystem_({\n      username: \"ea in enim\",\n      password: \"ea in enim\",\n      accept: \"application/xml\",\n  });\n\n  console.log(data);\n})();\n"
+    },
+    "/user/logout": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.logout.logsOutCurrentLoggedInUserSession_();\n\n  console.log(data);\n})();\n"
+    },
+    "/user/{username}": {
+      "get": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.username.getUserByUserName_(\n  \"username\",\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n",
+      "put": "import { SwaggerPetstore, UpdateUserResourceRequest } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  \n  const updateUserResourceRequest: UpdateUserResourceRequest = {\t\n    id: 10,\n    username: \"theUser\",\n    firstName: \"John\",\n    lastName: \"James\",\n    email: \"john@email.com\",\n    password: \"12345\",\n    phone: \"12345\",\n    userStatus: 1\n  };\n\n  const { data } = await swaggerPetstore.username.updateUserResource_(\n  \"username\",\n  updateUserResourceRequest\n);\n\n  console.log(data);\n})();\n",
+      "delete": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.username.deleteUserResource_(\"username\");\n\n  console.log(data);\n})();\n"
+    },
+    "/user": {
+      "post": "import { CreateUserRequest, SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  \n  const createUserRequest: CreateUserRequest = {\t\n    id: 10,\n    username: \"theUser\",\n    firstName: \"John\",\n    lastName: \"James\",\n    email: \"john@email.com\",\n    password: \"12345\",\n    phone: \"12345\",\n    userStatus: 1\n  };\n\n  const { data } = await swaggerPetstore.user.createUser_(\n  createUserRequest,\n  {\n      accept: \"application/json\",\n  }\n);\n\n  console.log(data);\n})();\n"
+    }
+  },
+  "example": "import { SwaggerPetstore } from 'swagger petstore';\n\n(async () => {\n  const swaggerPetstore = new SwaggerPetstore({});\n\n  const { data } = await swaggerPetstore.logout.logsOutCurrentLoggedInUserSession_();\n\n  console.log(data);\n})();\n"
+}
