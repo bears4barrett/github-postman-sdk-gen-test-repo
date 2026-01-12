@@ -1,0 +1,50 @@
+{
+  "endpoints": {
+    "/pet/findByStatus": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.find_by_status.finds_pets_by_status(\n    accept=\"application/json\",\n    status=\"available\"\n)\n\nprint(result)\n"
+    },
+    "/pet/findByTags": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.find_by_tags.finds_pets_by_tags(\n    accept=\"application/json\",\n    tags=\"nulla\"\n)\n\nprint(result)\n"
+    },
+    "/pet/{petId}/uploadImage": {
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nwith open(\"file.ext\", \"rb\") as f:\n    request_body = f.read()\n\nresult = sdk.upload_image.uploads_an_image(\n    request_body=request_body,\n    pet_id=\"petId\",\n    accept=\"application/json\",\n    additional_metadata=\"ea in enim\"\n)\n\nprint(result)\n"
+    },
+    "/pet/{petId}": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.pet_id.find_pet_by_id(\n    pet_id=\"petId\",\n    accept=\"application/json\"\n)\n\nprint(result)\n",
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.pet_id.updates_a_pet_in_the_store_with_form_data(\n    pet_id=\"petId\",\n    accept=\"application/json\",\n    name=\"ea in enim\",\n    status=\"ea in enim\"\n)\n\nprint(result)\n",
+      "delete": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.pet_id.deletes_a_pet(\n    pet_id=\"petId\",\n    api_key=\"ea in enim\"\n)\n\nprint(result)\n"
+    },
+    "/pet": {
+      "put": "from swagger_petstore import SwaggerPetstore, Environment\nfrom swagger_petstore.models import UpdateAnExistingPetRequest\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = UpdateAnExistingPetRequest(\n    name=\"doggie\",\n    photo_urls=[\n        \"quis labore\"\n    ],\n    id_=10,\n    category={\n        \"id_\": 1,\n        \"name\": \"Dogs\"\n    },\n    tags=[\n        {\n            \"id_\": 1247667,\n            \"name\": \"sint ipsum est pariatur\"\n        }\n    ],\n    status=\"pending\"\n)\n\nresult = sdk.pet.update_an_existing_pet(\n    request_body=request_body,\n    accept=\"application/json\"\n)\n\nprint(result)\n",
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\nfrom swagger_petstore.models import AddANewPetToTheStoreRequest\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = AddANewPetToTheStoreRequest(\n    name=\"doggie\",\n    photo_urls=[\n        \"quis labore\"\n    ],\n    id_=10,\n    category={\n        \"id_\": 1,\n        \"name\": \"Dogs\"\n    },\n    tags=[\n        {\n            \"id_\": 1247667,\n            \"name\": \"sint ipsum est pariatur\"\n        }\n    ],\n    status=\"pending\"\n)\n\nresult = sdk.pet.add_a_new_pet_to_the_store(\n    request_body=request_body,\n    accept=\"application/json\"\n)\n\nprint(result)\n"
+    },
+    "/store/inventory": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.inventory.returns_pet_inventories_by_status(accept=\"application/json\")\n\nprint(result)\n"
+    },
+    "/store/order/{orderId}": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.order_id.find_purchase_order_by_id(\n    order_id=\"orderId\",\n    accept=\"application/json\"\n)\n\nprint(result)\n",
+      "delete": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.order_id.delete_purchase_order_by_identifier(order_id=\"orderId\")\n\nprint(result)\n"
+    },
+    "/store/order": {
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\nfrom swagger_petstore.models import PlaceAnOrderForAPetRequest\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = PlaceAnOrderForAPetRequest(\n    id_=10,\n    pet_id=198772,\n    quantity=7,\n    ship_date=\"1946-11-30T04:39:04.949Z\",\n    status=\"approved\",\n    complete=True\n)\n\nresult = sdk.order.place_an_order_for_a_pet(\n    request_body=request_body,\n    accept=\"application/json\"\n)\n\nprint(result)\n"
+    },
+    "/user/createWithList": {
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = [\n    {\n        \"id_\": 10,\n        \"username\": \"theUser\",\n        \"first_name\": \"John\",\n        \"last_name\": \"James\",\n        \"email\": \"john@email.com\",\n        \"password\": \"12345\",\n        \"phone\": \"12345\",\n        \"user_status\": 1\n    }\n]\n\nresult = sdk.create_with_list.creates_list_of_users_with_given_input_array(\n    request_body=request_body,\n    accept=\"application/json\"\n)\n\nprint(result)\n"
+    },
+    "/user/login": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.login.logs_user_into_the_system(\n    accept=\"application/xml\",\n    username=\"ea in enim\",\n    password=\"ea in enim\"\n)\n\nprint(result)\n"
+    },
+    "/user/logout": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.logout.logs_out_current_logged_in_user_session()\n\nprint(result)\n"
+    },
+    "/user/{username}": {
+      "get": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.username.get_user_by_user_name(\n    username=\"username\",\n    accept=\"application/json\"\n)\n\nprint(result)\n",
+      "put": "from swagger_petstore import SwaggerPetstore, Environment\nfrom swagger_petstore.models import UpdateUserResourceRequest\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = UpdateUserResourceRequest(\n    id_=10,\n    username=\"theUser\",\n    first_name=\"John\",\n    last_name=\"James\",\n    email=\"john@email.com\",\n    password=\"12345\",\n    phone=\"12345\",\n    user_status=1\n)\n\nresult = sdk.username.update_user_resource(\n    request_body=request_body,\n    username=\"username\"\n)\n\nprint(result)\n",
+      "delete": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.username.delete_user_resource(username=\"username\")\n\nprint(result)\n"
+    },
+    "/user": {
+      "post": "from swagger_petstore import SwaggerPetstore, Environment\nfrom swagger_petstore.models import CreateUserRequest\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nrequest_body = CreateUserRequest(\n    id_=10,\n    username=\"theUser\",\n    first_name=\"John\",\n    last_name=\"James\",\n    email=\"john@email.com\",\n    password=\"12345\",\n    phone=\"12345\",\n    user_status=1\n)\n\nresult = sdk.user.create_user(\n    request_body=request_body,\n    accept=\"application/json\"\n)\n\nprint(result)\n"
+    }
+  },
+  "example": "from swagger_petstore import SwaggerPetstore, Environment\n\nsdk = SwaggerPetstore(\n    api_key=\"YOUR_API_KEY\",\n    api_key_header=\"YOUR_API_KEY_HEADER\",\n    base_url=Environment.DEFAULT.value,\n    timeout=10000\n)\n\nresult = sdk.logout.logs_out_current_logged_in_user_session()\n\nprint(result)\n"
+}
