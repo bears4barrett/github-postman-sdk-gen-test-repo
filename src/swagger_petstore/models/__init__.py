@@ -1,0 +1,14 @@
+from .update_an_existing_pet_request import UpdateAnExistingPetRequest
+from .add_a_new_pet_to_the_store_request import AddANewPetToTheStoreRequest
+from .place_an_order_for_a_pet_request import PlaceAnOrderForAPetRequest
+from .creates_list_of_users_with_given_input_array_request import (
+    CreatesListOfUsersWithGivenInputArrayRequest,
+)
+from .update_user_resource_request import UpdateUserResourceRequest
+from .create_user_request import CreateUserRequest
+from .update_an_existing_pet_request_category import UpdateAnExistingPetRequestCategory
+from .update_an_existing_pet_request_tags import UpdateAnExistingPetRequestTags
+from .add_a_new_pet_to_the_store_request_category import (
+    AddANewPetToTheStoreRequestCategory,
+)
+from .add_a_new_pet_to_the_store_request_tags import AddANewPetToTheStoreRequestTags
